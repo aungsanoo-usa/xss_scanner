@@ -46,7 +46,7 @@ The script accepts the following command-line arguments:
 ### Command Example
 
 ```bash
-python xss_scanner.py -l urls.txt -p xss_payloads.txt -o output.txt
+python3 xss_scanner.py -l urls.txt -p xss_payloads.txt -o output.txt
 ```
 
 ### Chrome Installation
