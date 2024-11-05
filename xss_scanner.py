@@ -49,6 +49,10 @@ def check_and_install_packages(packages):
 # Ensure required packages are installed
 check_and_install_packages({"prompt_toolkit": "3.0.20", "rich": "10.7.0", "selenium": "3.141.0"})
 
+def get_random_user_agent():
+    """Select a random user agent from the USER_AGENTS list."""
+    return random.choice(USER_AGENTS)
+
 def get_file_path(prompt_text):
     """Prompt user for a file path with autocompletion."""
     completer = PathCompleter()
@@ -96,7 +100,7 @@ def create_driver():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
     chrome_options.page_load_strategy = 'eager'
-    chrome_options.add_argument(f"user-agent={random.choice(USER_AGENTS)}")  # Random user agent
+    chrome_options.add_argument(f"user-agent={get_random_user_agent()}")  # Random user agent
     logging.disable(logging.CRITICAL)
 
     driver_service = Service(ChromeDriverManager().install())
@@ -172,7 +176,7 @@ def run_scan(urls, payload_file, timeout):
 def print_url_box(url):
     """Prints a custom ASCII-styled box around the scanning URL."""
     box_content = f" → Scanning URL: {url} "
-    box_width = max(len(box_content) +2, 40)  # Adjust width as needed
+    box_width = max(len(box_content) + 2, 40)  # Adjust width as needed
     top_border = "┌" + "─" * (box_width - 2) + "┐"
     middle = f"│{box_content.center(box_width - 2)}│"
     bottom_border = "└" + "─" * (box_width - 2) + "┘"
