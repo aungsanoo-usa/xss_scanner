@@ -138,13 +138,13 @@ def run_scan(urls, payload_file, timeout):
                         alert = WebDriverWait(driver, alert_timeout).until(EC.alert_is_present())
                         alert_text = alert.text
                         if alert_text:
-                            rprint(f"[bold green][✓] Vulnerable: {payload_url} - Alert Text: {alert_text}[/bold green]")
+                            rprint(f"[bold green] [✓] Vulnerable: [bold blue] {payload_url} [/bold blue] - Alert Text: {alert_text}")
                             vulnerable_urls.append(payload_url)
                             alert.accept()
                         else:
-                            rprint(f"[bold red][✗] Not Vulnerable: {payload_url}[/bold red]")
+                            rprint(f"[✗] Not Vulnerable:[bold red] {payload_url}[/bold red]")
                     except TimeoutException:
-                        rprint(f"[bold red][✗] Not Vulnerable: {payload_url}[/bold red]")
+                        rprint(f"[✗] Not Vulnerable:[bold red] {payload_url}[/bold red]")
 
                 except UnexpectedAlertPresentException:
                     pass
