@@ -74,7 +74,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 ### Chrome Driver Installation
 
 ```bash
-wget https://storage.googleapis.com/chrome-for-testing-public/128.0.6613.119/linux64/chromedriver-linux64.zip
+wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
 ```
 ```bash
 unzip chromedriver-linux64.zip
