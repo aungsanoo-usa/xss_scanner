@@ -1,2 +1,1 @@
-https://nptdc.gov.mm/mobile_naypyitaw.php?naypyitawname=
 http://testphp.vulnweb.com/listproducts.php?cat=
